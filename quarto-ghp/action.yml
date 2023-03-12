@@ -40,9 +40,6 @@ runs:
         else
           pip install -Uq nbdev
         fi
-        if [ -f requirements.txt ]; then
-          pip install -r requirements.txt
-        fi
         test -f setup.py && pip install -e ".[dev]"
         nbdev_docs
     - name: Deploy to GitHub Pages
