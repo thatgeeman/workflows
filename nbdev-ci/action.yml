@@ -44,6 +44,12 @@ runs:
         else
           pip install -U nbdev
         fi
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        else 
+          make deps
+          pip install -r requirements.txt
+        fi
         echo "Doing editable install..."
         test -f setup.py && pip install -e ".[dev]"
         echo "Check we are starting with clean git checkout"
