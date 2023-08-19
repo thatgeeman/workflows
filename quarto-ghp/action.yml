@@ -30,7 +30,7 @@ runs:
       run: |
         set -ux
         python -m pip install --upgrade pip
-        pip install -Uq pipenv==2022.8.5  # because of `lock -r` change in https://github.com/pypa/pipenv/pull/5200
+        pip install -Uq pipenv">=2022.8.5"  # because of `lock -r` change in https://github.com/pypa/pipenv/pull/5200
         curl https://pyenv.run | bash  # install pyenv
         # continue with fastai packages
         if [ $USE_PRE ]; then
